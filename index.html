@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-cont a {
+            display: block;
+            padding: 4px;
+
+        }
+
+        .task1 {
+            background-color: darkgray;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .task1 a {
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px;
+            color: rgb(101, 81, 216);
+
+        }
+
+        .task3 {
+            background-color: darkred;
+            padding: 30px;
+            color: white;
+        }
+
+        .task3 button {
+            padding: 10px;
+            font-size: 20px;
+            background-color: steelblue;
+            color: whitesmoke;
+            margin-bottom: 10px;
+
+        }
+
+        .task3 button:hover {
+            background-color: whitesmoke;
+            color: steelblue;
+        }
+
+        .task4 {
+            background-color: thistle;
+            height: 300px;
+            width: 200px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            border: 2px ridge gainsboro;
+            box-shadow: 2px 2px 2px grey;
+        }
+
+        .content {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .content button {
+            padding: 5px;
+            background-color: rgb(143, 27, 189);
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .content button:hover {
+            background-color: indianred;
+        }
+
+        .form {
+            border: 2px solid blue;
+            background-color: aqua;
+            padding: 10px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="task1">
+        <h1>Task 1</h1><br>
+        <a href="https://www.facebook.com/syrath.k.1"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+
+    </div>
+
+
+    <center class="task3">
+        <h1>Task 3</h1><br>
+        <button onclick="toggle()">switch</button>
+        <img id="image1" src="bulboff.png" alt="" height="200px" width="200px">
+        <img id="image2" src="bulbon.jpg" alt="" height="200px" width="200px" style="display: none;">
+
+    </center>
+    <script>
+        function toggle() {
+            var a = document.getElementById("image1");
+            var b = document.getElementById("image2");
+            if (a.style.display === "none") {
+                a.style.display = "block";
+                b.style.display = "none";
+            }
+            else {
+                a.style.display = "none";
+                b.style.display = "block";
+            }
+        }
+    </script>
+
+    <center>
+        <div class="container">
+            <button id="btn"><i id="togicon" class="fa fa-bars" aria-hidden="true"></i></button>
+            <div id="menu-cont" style="display: none;">
+                <a href="#">link 1</a>
+                <a href="#">link 2</a>
+                <a href="">link 3</a>
+                <a href="">link 3</a>
+                <a href="">link 3</a>
+
+            </div>
+
+
+        </div>
+
+    </center>
+
+    <script>
+        var x = document.getElementById("btn");
+        var togicon1 = document.getElementById("togicon");
+        x.onclick = fnc;
+        function fnc() {
+            var a = document.getElementById("menu-cont");
+            if (a.style.display === "none") {
+                a.style.display = "block";
+                x.style.color = "blue";
+                togicon1.classList = "fa fa-times";
+            }
+            else {
+                a.style.display = "none";
+                x.style.color = "red";
+                togicon1.classList = "fa fa-bars"
+            }
+        }
+
+    </script>
+
+
+    <h1>Task 4</h1>
+
+    <div class="task4">
+        <div class="img">
+            <center>
+                <img src="1.jpg" alt="" width="180px" height="200px" style="margin-top: 10px;">
+            </center>
+        </div>
+        <hr>
+        <div class="content">
+            <h4>Cloth Painting</h4>
+            <h4>Price: ₹5000</h4>
+            <a href="cp1.html"><button>Description</button></a>
+
+        </div>
+    </div>
+
+    <!-- form -->
+
+    <form action="" class="form">
+        <label for="uname">Username:</label>
+        <input type="text" name="name" required> <br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="name" required><br>
+
+        <label for="cpassword">Confirm password:</label>
+        <input type="password" id="cpassword" required name="cpassword"><br>
+
+        <input type="submit" onclick="func()">
+    </form>
+
+
+    <script>
+        function func() {
+            var password = document.getElementById("password");
+            var cpassword = document.getElementById("cpassword");
+
+            if (password.value != cpassword.value) {
+                alert("password wrong");
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
